@@ -33,7 +33,7 @@ const VideoChatView = () => {
   ] = useMedia(
     {
       audio: true,
-      video: false,
+      video: true,
     },
     localVideoRef
   );
