@@ -46,9 +46,6 @@ const SignInView = () => {
     e.preventDefault();
     navigate("/auth/signup");
   };
-  const handleForgotPasswordClicked = (e) => {
-    e.preventDefault();
-  };
 
   const onSubmit = async (data) => {
     const submitedData = {
@@ -60,6 +57,10 @@ const SignInView = () => {
     };
 
     dispatch(signIn(submitedData));
+  };
+
+  const handleForgotPasswordClicked = () => {
+    navigate("/auth/forgot-password");
   };
 
   return (
@@ -156,7 +157,9 @@ const SignInView = () => {
         </LoadingButton>
         <Grid container justifyContent="space-between">
           <Grid onClick={handleForgotPasswordClicked} item>
-            <Link variant="body2">Forgot your password ?</Link>
+            <Link onClick={handleForgotPasswordClicked} variant="body2">
+              Forgot your password ?
+            </Link>
           </Grid>
           <Grid onClick={handleSignUpBtnClicked} item>
             <Link href="#" variant="body2">

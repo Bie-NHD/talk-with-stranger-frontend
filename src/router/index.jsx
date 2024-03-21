@@ -9,6 +9,8 @@ import {
   SignUpView,
   SignInView,
   AuthenticationView,
+  ForgotPassword,
+  ResetPassword,
 } from "../views/Authentication";
 
 const routes = [
@@ -27,6 +29,8 @@ const routes = [
         children: [
           { index: true, path: "signin", element: <SignInView /> },
           { path: "signup", element: <SignUpView /> },
+          { path: "forgot-password", element: <ForgotPassword /> },
+          { path: "reset-password", element: <ResetPassword /> },
         ],
       },
       {

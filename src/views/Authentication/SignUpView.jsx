@@ -25,8 +25,9 @@ const SignUpView = () => {
   const {
     register,
     handleSubmit,
-    watch,
+
     control,
+    watch,
     formState: { errors },
   } = useForm();
   const [showPassword, setShowPassword] = useState(false);

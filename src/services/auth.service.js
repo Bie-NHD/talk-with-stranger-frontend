@@ -40,6 +40,20 @@ class AuthService extends BaseService {
       }
     );
   }
+
+  async forgotPassword(email) {
+    return await this.post("/users/forgotPassword", {
+      email,
+    });
+  }
+
+  async resetPassword({ otp, email, newPassword }) {
+    return await this.post("/users/resetPassword", {
+      email,
+      otp,
+      password: newPassword,
+    });
+  }
 }
 
 export default AuthService;
