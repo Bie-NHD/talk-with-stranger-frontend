@@ -10,7 +10,8 @@ class Media {
   }
 
   async openStream() {
-    this.stream = await navigator.mediaDevices.getUserMedia(this.config);
+    const stream = await navigator.mediaDevices.getUserMedia(this.config);
+    this.stream = stream;
   }
 
   muteMic() {

@@ -34,7 +34,7 @@ const SettingBarFullControl = ({
       }}
       justifyContent="space-between"
     >
-      <Stack
+      {/* <Stack
         mr={3}
         width="200px"
         spacing={2}
@@ -44,7 +44,7 @@ const SettingBarFullControl = ({
         <VolumeDown />
         <Slider aria-label="Volume" value={volume} onChange={onVolumeChange} />
         <VolumeUp />
-      </Stack>
+      </Stack> */}
       <IconButton onClick={onMicBtnClicked} sx={{ color: "white", mr: 3 }}>
         {!micMute ? <Mic /> : <MicOff />}
       </IconButton>

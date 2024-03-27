@@ -18,6 +18,7 @@ const useMedia = (defaultConfig = { audio: true, video: true }, videoRef) => {
         await mediaObj.current.openStream();
         setLoading(false);
         videoRef.current.srcObject = mediaObj.current.getStream();
+        videoRef.current.muted = true;
         setLocalStream(mediaObj.current.getStream());
       }
     })();
