@@ -21,9 +21,6 @@ const ForgotPassword = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const [optModal, setOtpModal] = useState(false);
-  const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,10 +31,14 @@ const ForgotPassword = () => {
         `${import.meta.env.VITE_BASE_URL}/api/v1`
       );
       setIsLoading(true);
+
       const res = await authService.forgotPassword(data.email);
       dispatch(showSuccessToast(res.message));
-      setEmail(data.email);
-      setOtpModal(true);
+      navigate("/auth/reset-password", {
+        state: {
+          email: data.email,
+        },
+      });
     } catch (err) {
       dispatch(showErrorToast(err.message));
     } finally {
@@ -45,22 +46,9 @@ const ForgotPassword = () => {
     }
   };
 
-  const handleOtpChange = (value) => {
-    setOtp(value);
-  };
-
-  const handleOtpInputComplete = (data) => {
-    navigate("/auth/reset-password", {
-      state: {
-        otp: data,
-        email,
-      },
-    });
-  };
-
   return (
     <>
-      <Modal open={optModal} onClose={() => setOtpModal(false)}>
+      {/* <Modal open={optModal} onClose={() => setOtpModal(false)}>
         <Box
           width="30rem"
           bgcolor="white"
@@ -89,7 +77,7 @@ const ForgotPassword = () => {
             onComplete={handleOtpInputComplete}
           />
         </Box>
-      </Modal>
+      </Modal> */}
       <Stack
         sx={{
           width: "30rem",

@@ -41,3 +41,18 @@ export const clearUserCookies = () => {
   Cookie.remove("uid");
   Cookie.remove("refreshToken");
 };
+
+export const debounce = (fn, delay) => {
+  let timer = null;
+
+  return (...args) => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(async () => {
+      await fn(...args);
+      timer = null;
+    }, delay);
+  };
+};

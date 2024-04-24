@@ -12,6 +12,8 @@ import {
   ForgotPassword,
   ResetPassword,
 } from "../views/Authentication";
+import FriendRequest from "../views/FriendRequest/FriendRequest";
+import Conservation from "../views/Conservations/Conservation";
 
 const routes = [
   {
@@ -55,6 +57,22 @@ const routes = [
             element: (
               <PrivateRoute>
                 <VideoChatView />
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "conservations",
+            element: (
+              <PrivateRoute>
+                <Conservation />
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "friend-requests",
+            element: (
+              <PrivateRoute>
+                <FriendRequest />
               </PrivateRoute>
             ),
           },

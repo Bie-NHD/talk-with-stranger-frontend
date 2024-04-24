@@ -15,7 +15,6 @@ const ChatBar = ({ messages }) => {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    // Scroll to the bottom when messages change or new message is added
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
   return (
@@ -39,6 +38,7 @@ const ChatBar = ({ messages }) => {
         {messages.map((message, i) => (
           <ChatMessageItem
             key={i}
+            avatarSrc={message.avatar}
             active={message.isSender}
             messageRight={!message.isSender}
             sendAt={message.sendAt}
@@ -47,7 +47,7 @@ const ChatBar = ({ messages }) => {
           />
         ))}
       </Stack>
-      <div ref={messagesEndRef} /> {/* Ref element to scroll to */}
+      <div ref={messagesEndRef} />
     </Box>
   );
 };

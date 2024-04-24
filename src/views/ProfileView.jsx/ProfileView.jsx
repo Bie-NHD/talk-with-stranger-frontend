@@ -86,14 +86,38 @@ const ProfileView = () => {
       <Container maxWidth="lg">
         <Box component="div">
           <Grid container>
-            <Grid sx={{ pr: 2 }} item xs={5}>
+            <Grid
+              sx={{
+                pr: {
+                  md: 2,
+                  xs: 0,
+                },
+              }}
+              item
+              xs={12}
+              md={5}
+            >
               <UserProfileCard
                 user={currentUser}
                 onAvatarSelect={handleAvatarUploadChange}
                 onBackgroundSelect={handleBackgroundChange}
               />
             </Grid>
-            <Grid sx={{ pl: 2 }} item xs={7}>
+            <Grid
+              sx={{
+                pl: {
+                  md: 2,
+                  xs: 0,
+                },
+                pt: {
+                  md: 0,
+                  xs: 2,
+                },
+              }}
+              item
+              xs={12}
+              md={7}
+            >
               <EditProfileForm
                 onSubmit={onEditFormSubmit}
                 initialValue={currentUser}

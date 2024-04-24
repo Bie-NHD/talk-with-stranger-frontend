@@ -1,4 +1,4 @@
-import { Settings } from "@mui/icons-material";
+import { More, MoreHoriz, PersonAdd, Settings } from "@mui/icons-material";
 import {
   Avatar,
   Box,
@@ -26,10 +26,23 @@ const VideoController = (
     loading,
     screenLoading,
     userInfo,
+    menu,
+    onMenuItemClick,
   },
   ref
 ) => {
   const [hover, setHover] = useState(false);
+  const [menuAnchor, setMenuAnchor] = useState(null);
+
+  const handleMenuBtnClick = (e) => {
+    setMenuAnchor(e.currentTarget);
+  };
+
+  const handleMenuClose = (actionType) => {
+    onMenuItemClick(actionType);
+    setMenuAnchor(null);
+  };
+
   return (
     <Box
       component="div"
@@ -43,6 +56,36 @@ const VideoController = (
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
+      {userInfo && !loading && menu && (
+        <>
+          <IconButton
+            onClick={handleMenuBtnClick}
+            sx={{
+              position: "absolute",
+              zIndex: 1000,
+              top: 5,
+              right: 10,
+              color: "white",
+            }}
+          >
+            <MoreHoriz />
+          </IconButton>
+          <Menu
+            anchorEl={menuAnchor}
+            open={!!menuAnchor}
+            onClose={handleMenuClose}
+          >
+            {menu.map((menuItem, i) => (
+              <MenuItem
+                key={i}
+                onClick={() => handleMenuClose(menuItem.actionType)}
+              >
+                <PersonAdd sx={{ mr: 1 }} /> {menuItem.label}
+              </MenuItem>
+            ))}
+          </Menu>
+        </>
+      )}
       {userInfo && !loading && (
         <Stack
           sx={{

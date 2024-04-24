@@ -21,9 +21,13 @@ import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import { Avatar, Container, Menu, MenuItem, Tooltip } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import { Outlet, useNavigate } from "react-router-dom";
-import { FenceTwoTone, Logout } from "@mui/icons-material";
+import { Chat, Diversity1, FenceTwoTone, Logout } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../../store/userSlice";
+import socket from "../../socket";
+import Peer from "peerjs";
+import { current } from "@reduxjs/toolkit";
+import useMedia from "../../hooks/useMedia";
 
 const drawerWidth = 240;
 
@@ -102,7 +106,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "flex-end",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
 
@@ -157,6 +160,38 @@ export default function Home() {
     }
   }, [currentUser]);
 
+  React.useEffect(() => {
+    socket.on("call/waiting", (receiverInfo) => {
+      console.log(`Waiting for ${receiverInfo}`);
+    });
+
+    socket.on("call/accepted", (peerId) => {
+      const peer = new Peer();
+
+      //call to peerId
+    });
+
+    socket.on("call/rejected", () => {
+      console.log("Call rejected");
+    });
+
+    socket.on("call/received", (callerInfo) => {
+      console.log("Call received", callerInfo);
+      // if (true) {
+      //   const peer = new Peer();
+
+      //   socket.emit("call/accept", peer.id);
+      // }
+    });
+
+    return () => {
+      socket.off("call/waiting");
+      socket.off("call/accepted");
+      socket.off("call/rejected");
+      socket.off("call/received");
+    };
+  }, []);
+
   const onAvatarClick = (e) => {
     setAnchor(e.currentTarget);
   };
@@ -184,6 +219,12 @@ export default function Home() {
         break;
       case 1:
         navigate("/home/video-chat");
+        break;
+      case 2:
+        navigate("/home/conservations");
+        break;
+      case 3:
+        navigate("/home/friend-requests");
         break;
       default:
         return;
@@ -246,38 +287,47 @@ export default function Home() {
         </DrawerHeader>
         <Divider />
         <List>
-          {["My Profile", "Video Chat"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <Tooltip enterDelay={1500} placement="top-end" arrow title={text}>
-                <ListItemButton
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
-                    px: 2.5,
-                  }}
-                  onClick={() => handleSideBarItemClicked(index)}
+          {["My Profile", "Video Chat", "Conservations", "Friend Requests"].map(
+            (text, index) => (
+              <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                <Tooltip
+                  enterDelay={1500}
+                  placement="top-end"
+                  arrow
+                  title={text}
                 >
-                  <ListItemIcon
+                  <ListItemButton
                     sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : "auto",
-                      justifyContent: "center",
+                      minHeight: 48,
+                      justifyContent: open ? "initial" : "center",
+                      px: 2.5,
                     }}
+                    onClick={() => handleSideBarItemClicked(index)}
                   >
-                    {index % 2 === 0 ? (
-                      <AccountBoxIcon />
-                    ) : (
-                      <PhotoCameraFrontIcon />
-                    )}
-                  </ListItemIcon>
-                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                </ListItemButton>
-              </Tooltip>
-            </ListItem>
-          ))}
+                    <ListItemIcon
+                      sx={{
+                        minWidth: 0,
+                        mr: open ? 3 : "auto",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {index === 0 && <AccountBoxIcon />}
+                      {index === 1 && <PhotoCameraFrontIcon />}
+                      {index === 2 && <Chat />}
+                      {index === 3 && <Diversity1 />}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={text}
+                      sx={{ opacity: open ? 1 : 0 }}
+                    />
+                  </ListItemButton>
+                </Tooltip>
+              </ListItem>
+            )
+          )}
         </List>
       </Drawer>
-      <Box component="div" sx={{ flexGrow: 1, p: 2 }}>
+      <Box component="div" sx={{ flexGrow: 1, p: 1 }}>
         <DrawerHeader />
         <Outlet />
       </Box>

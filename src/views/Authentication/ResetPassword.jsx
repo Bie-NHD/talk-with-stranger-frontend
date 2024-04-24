@@ -36,7 +36,7 @@ const ResetPassword = () => {
       );
       setIsLoading(true);
       const res = await authService.resetPassword({
-        otp: state.otp,
+        otp: data.otp,
         email: state.email,
         newPassword: data.password,
       });
@@ -78,6 +78,15 @@ const ResetPassword = () => {
         sx={{ mt: 3 }}
       >
         <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              {...register("otp", {
+                required: "Please enter your otp code",
+              })}
+              label="OTP"
+              fullWidth
+            />
+          </Grid>
           <Grid item xs={12}>
             <TextField
               fullWidth

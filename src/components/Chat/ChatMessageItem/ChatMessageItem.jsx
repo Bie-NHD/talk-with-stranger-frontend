@@ -2,7 +2,15 @@ import { Avatar, Chip, Stack, Typography } from "@mui/material";
 import { blue, grey } from "@mui/material/colors";
 import moment from "moment";
 
-const ChatMessageItem = ({ messageRight, active, text, sendAt, username }) => {
+const ChatMessageItem = ({
+  messageRight,
+  active,
+  text,
+  sendAt,
+  username,
+  avatarSrc,
+  wrapperSx,
+}) => {
   const messageStyle = {
     ...(messageRight && { marginLeft: "auto" }),
   };
@@ -19,8 +27,10 @@ const ChatMessageItem = ({ messageRight, active, text, sendAt, username }) => {
 
   const datetimeFormat = "DD-MM-YYYY HH:mm:ss";
   const formatedDatetime = moment(sendAt).format(datetimeFormat);
+
   return (
     <Stack
+      sx={wrapperSx}
       spacing={1}
       direction="row"
       justifyItems="center"
@@ -35,17 +45,17 @@ const ChatMessageItem = ({ messageRight, active, text, sendAt, username }) => {
             </Typography>
             <Chip sx={sx} label={text || ""} />
           </div>
-          <Avatar sx={avatarSx}>{`${username.charAt(0)}${username.charAt(
-            1
-          )}`}</Avatar>
+          <Avatar src={avatarSrc} sx={avatarSx}>{`${username.charAt(
+            0
+          )}${username.charAt(1)}`}</Avatar>
         </>
       ) : (
         <>
-          <Avatar sx={avatarSx}>{`${username.charAt(0)}${username.charAt(
-            1
-          )}`}</Avatar>
+          <Avatar src={avatarSrc} sx={avatarSx}>{`${username.charAt(
+            0
+          )}${username.charAt(1)}`}</Avatar>
           <div style={messageStyle}>
-            <Typography textAlign="left" sx={{ ml: 1, fontSize: "11px" }}>
+            <Typography textAlign="right" sx={{ ml: 1, fontSize: "11px" }}>
               {formatedDatetime}
             </Typography>
             <Chip sx={sx} label={text || ""} />

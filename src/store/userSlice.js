@@ -158,6 +158,7 @@ const userSlice = createSlice({
 
         setUserCookies({ uid: user.id, refreshToken: tokens?.refreshToken });
         socket.connect();
+        socket.emit("user/connect", user);
         return {
           ...state,
           isLoading: false,
@@ -187,7 +188,7 @@ const userSlice = createSlice({
           setUserCookies({ uid: user.id, refreshToken: tokens?.refreshToken });
         }
         socket.connect();
-
+        socket.emit("user/connect", user);
         return {
           ...state,
           isLoading: false,
@@ -210,6 +211,7 @@ const userSlice = createSlice({
       .addCase(signOut.fulfilled, (state, { payload }) => {
         clearUserCookies();
         socket.disconnect();
+        // socket.emit("user/disconnect", state.currentUser.id);
         return {
           ...state,
           isLoading: false,
@@ -297,6 +299,8 @@ const userSlice = createSlice({
 
         setUserCookies({ uid: user.id, refreshToken: tokens?.refreshToken });
         socket.connect();
+        socket.emit("user/connect", user);
+
         return {
           ...state,
           isLoading: false,
