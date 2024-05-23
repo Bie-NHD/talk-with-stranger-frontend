@@ -66,9 +66,9 @@ const ChatInfoHeader = ({
       >
         Unfriend
       </Button> */}
-      {/* <IconButton color="info" onClick={() => onCallClick(userId)}>
+      <IconButton color="info" onClick={() => onCallClick(userId)}>
         <Call />
-      </IconButton> */}
+      </IconButton>
     </Box>
   );
 };

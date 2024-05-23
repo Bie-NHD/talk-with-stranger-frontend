@@ -52,6 +52,7 @@ const Conservation = () => {
       );
 
       const remoteData = {
+        id: foundMember.id,
         avatar: foundMember.user_avatar,
         fullName: `${foundMember.user_first_name} ${foundMember.user_last_name}`,
         gender: foundMember.user_gender,

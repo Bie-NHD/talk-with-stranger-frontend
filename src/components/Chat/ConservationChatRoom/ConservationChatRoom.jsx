@@ -9,14 +9,17 @@ import { useSelector } from "react-redux";
 import ConfirmDialog from "../../ConfirmDialog/ConfirmDialog";
 import FriendService from "../../../services/friend.service.js";
 import { toast } from "react-toastify";
+import CallModal from "../../CallModal/CallModal.jsx";
 
 const ConservationChatRoom = ({ conservation }) => {
   const { userData, conservation: conservationData } = conservation;
   const [messages, setMessages] = useState([]);
   const currentUserId = useSelector((state) => state.user.currentUser.id);
+  const currentUser = useSelector((state) => state.user.currentUser);
   const tokens = useSelector((state) => state.user.userToken);
   const [loading, setLoading] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
+  const [callModalOpen, setCallModalOpen] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -106,11 +109,21 @@ const ConservationChatRoom = ({ conservation }) => {
   };
 
   const handleCall = (userId) => {
-    socket.emit("call/create", { caller: userData, receiverId: userId });
+    socket.emit("call/create", {
+      caller: currentUser,
+      receiver: userData,
+    });
+
+    setCallModalOpen(true);
   };
 
   return (
     <>
+      <CallModal
+        open={callModalOpen}
+        onClose={() => setCallModalOpen(false)}
+        caller
+      />
       <ConfirmDialog
         onActions={handleUnfriend}
         open={showDialog}

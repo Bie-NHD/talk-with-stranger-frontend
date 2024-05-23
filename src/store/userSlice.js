@@ -15,6 +15,7 @@ export const signUp = createAsyncThunk(
     try {
       const userData = await authService.signUp(payload);
       dispatch(showSuccessToast(userData.message));
+
       return userData;
     } catch (err) {
       dispatch(showErrorToast(err.message));
@@ -29,6 +30,7 @@ export const signIn = createAsyncThunk(
     try {
       const userData = await authService.signIn(payload?.userData);
       dispatch(showSuccessToast(userData.message));
+
       return {
         rememberMe: payload.isRememberMe,
         user: userData,
@@ -49,6 +51,7 @@ export const signOut = createAsyncThunk(
       const response = await authService.logOut(uid, tokens);
       dispatch(showSuccessToast("Log out successfully!"));
       dispatch(logout());
+
       return response;
     } catch (err) {
       dispatch(showErrorToast("Can't log out due to some error"));
@@ -211,7 +214,7 @@ const userSlice = createSlice({
       .addCase(signOut.fulfilled, (state, { payload }) => {
         clearUserCookies();
         socket.disconnect();
-        // socket.emit("user/disconnect", state.currentUser.id);
+        socket.emit("user/disconnect", state.currentUser.id);
         return {
           ...state,
           isLoading: false,

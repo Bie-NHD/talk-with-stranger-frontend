@@ -27,7 +27,7 @@ import { signOut } from "../../store/userSlice";
 import socket from "../../socket";
 import Peer from "peerjs";
 import { current } from "@reduxjs/toolkit";
-import useMedia from "../../hooks/useMedia";
+import NewCallModal from "../../components/NewCallModal/NewCallModal";
 
 const drawerWidth = 240;
 
@@ -151,6 +151,8 @@ export default function Home() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
+  const [newCallModalOpen, setNewCallModalOpen] = React.useState(false);
+  const [callerInfo, setCallerInfo] = React.useState();
 
   React.useEffect(() => {
     if (!currentUser) {
@@ -161,34 +163,19 @@ export default function Home() {
   }, [currentUser]);
 
   React.useEffect(() => {
-    socket.on("call/waiting", (receiverInfo) => {
-      console.log(`Waiting for ${receiverInfo}`);
-    });
-
-    socket.on("call/accepted", (peerId) => {
-      const peer = new Peer();
-
-      //call to peerId
-    });
-
-    socket.on("call/rejected", () => {
-      console.log("Call rejected");
-    });
-
     socket.on("call/received", (callerInfo) => {
-      console.log("Call received", callerInfo);
-      // if (true) {
-      //   const peer = new Peer();
+      setCallerInfo(callerInfo);
+      setNewCallModalOpen(true);
+    });
 
-      //   socket.emit("call/accept", peer.id);
-      // }
+    socket.on("call/canceled", () => {
+      setCallerInfo(null);
+      setNewCallModalOpen(false);
     });
 
     return () => {
-      socket.off("call/waiting");
-      socket.off("call/accepted");
-      socket.off("call/rejected");
       socket.off("call/received");
+      socket.off("call/canceled");
     };
   }, []);
 
@@ -233,6 +220,11 @@ export default function Home() {
 
   return (
     <Box sx={{ display: "flex" }}>
+      <NewCallModal
+        callerInfo={callerInfo}
+        open={newCallModalOpen}
+        onClose={() => setNewCallModalOpen(false)}
+      />
       <CssBaseline />
       <AppBar
         sx={{
