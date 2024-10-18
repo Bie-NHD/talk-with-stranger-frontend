@@ -1,0 +1,188 @@
+PS D:\Code\2024-2025 sem 1\talk-with-stranger-frontend> npm test
+
+> talk-with-stranger-fe@0.0.0 test
+> vitest
+
+
+ DEV  v2.1.3 D:/Code/2024-2025 sem 1/talk-with-stranger-frontend
+
+ ❯ __test__/components/UserProfileCard.test.jsx (0)
+ ↓ __test__/views/ProfileView.test.jsx (1) [skipped]
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+ FAIL  __test__/components/UserProfileCard.test.jsx [ __test__/components/UserProfileCard.test.jsx ]
+Error: No test suite found in file D:/Code/2024-2025 sem 1/talk-with-stranger-frontend/__test__/components/UserProfileCard.test.jsx
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+ Test Files  1 failed | 1 skipped (2)
+      Tests   (1)
+   Start at  00:23:31
+   Duration  110.47s (transform 443ms, setup 6.26s, collect 101.19s, tests 0ms, environment 11.43s, prepare 425ms)
+
+
+ FAIL  Tests failed. Watching for file changes...
+       press h to show help, press q to quit
+PS D:\Code\2024-2025 sem 1\talk-with-stranger-frontend> npm test
+
+> talk-with-stranger-fe@0.0.0 test
+> vitest
+
+
+ DEV  v2.1.3 D:/Code/2024-2025 sem 1/talk-with-stranger-frontend
+
+stderr | __test__/components/UserProfileCard.test.jsx > render UserProfileCard
+Error: Uncaught [TypeError: Cannot destructure property 'user_first_name' of 'user' as it is undefined.]
+    at reportException (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+    at invokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+    at invokeGuardedCallback (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+    at beginWork$1 (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:27451:7)
+    at performUnitOfWork (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:26560:12) TypeError: Cannot destructure property 'user_first_name' of 'user' as it is undefined.
+    at UserProfileCard (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\src\components\UserProfileCard\UserProfileCard.jsx:8:5)
+    at renderWithHooks (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:16305:18)
+    at mountIndeterminateComponent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:20074:13)
+    at beginWork (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:21587:16)
+    at HTMLUnknownElement.callCallback (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+    at innerInvokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+    at invokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+Error: Uncaught [TypeError: Cannot destructure property 'user_first_name' of 'user' as it is undefined.]
+    at reportException (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+    at invokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+    at invokeGuardedCallback (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+    at beginWork$1 (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:27451:7)
+    at performUnitOfWork (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:26560:12) TypeError: Cannot destructure property 'user_first_name' of 'user' as it is undefined.
+    at UserProfileCard (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\src\components\UserProfileCard\UserProfileCard.jsx:8:5)
+    at renderWithHooks (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:16305:18)
+    at mountIndeterminateComponent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:20074:13)
+    at beginWork (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:21587:16)
+    at HTMLUnknownElement.callCallback (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+    at innerInvokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+    at invokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+The above error occurred in the <UserProfileCard> component:
+
+    at UserProfileCard (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\src\components\UserProfileCard\UserProfileCard.jsx:11:28)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | __test__/views/ProfileView.test.jsx > render profile view
+Error: Uncaught [Error: could not find react-redux context value; please ensure the component is wrapped in a <Provider>]
+    at reportException (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+    at invokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+    at invokeGuardedCallback (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+    at beginWork$1 (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:27451:7)
+    at performUnitOfWork (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:26560:12) Error: could not find react-redux context value; please ensure the component is wrapped in a <Provider>
+    at useReduxContext2 (file:///D:/Code/2024-2025%20sem%201/talk-with-stranger-frontend/node_modules/react-redux/dist/react-redux.mjs:47:13)
+    at Module.useSelector2 (file:///D:/Code/2024-2025%20sem%201/talk-with-stranger-frontend/node_modules/react-redux/dist/react-redux.mjs:85:9)
+    at ProfileView (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\src\views\ProfileView.jsx\ProfileView.jsx:22:38)
+    at renderWithHooks (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:16305:18)
+    at mountIndeterminateComponent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:20074:13)
+    at beginWork (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:21587:16)
+    at HTMLUnknownElement.callCallback (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+    at innerInvokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+    at invokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+Error: Uncaught [Error: could not find react-redux context value; please ensure the component is wrapped in a <Provider>]
+    at reportException (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:353:9)
+    at invokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4213:16)
+    at invokeGuardedCallback (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4277:31)
+    at beginWork$1 (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:27451:7)
+    at performUnitOfWork (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:26560:12) Error: could not find react-redux context value; please ensure the component is wrapped in a <Provider>
+    at useReduxContext2 (file:///D:/Code/2024-2025%20sem%201/talk-with-stranger-frontend/node_modules/react-redux/dist/react-redux.mjs:47:13)
+    at Module.useSelector2 (file:///D:/Code/2024-2025%20sem%201/talk-with-stranger-frontend/node_modules/react-redux/dist/react-redux.mjs:85:9)
+    at ProfileView (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\src\views\ProfileView.jsx\ProfileView.jsx:22:38)
+    at renderWithHooks (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:16305:18)
+    at mountIndeterminateComponent (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:20074:13)
+    at beginWork (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:21587:16)
+    at HTMLUnknownElement.callCallback (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\react-dom\cjs\react-dom.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+    at innerInvokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+    at invokeEventListeners (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+The above error occurred in the <ProfileView> component:
+
+    at ProfileView (D:\Code\2024-2025 sem 1\talk-with-stranger-frontend\src\views\ProfileView.jsx\ProfileView.jsx:22:59)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+ ❯ __test__/components/UserProfileCard.test.jsx (1)
+   × render UserProfileCard
+ ❯ __test__/views/ProfileView.test.jsx (1)
+   × render profile view
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  __test__/components/UserProfileCard.test.jsx > render UserProfileCard
+TypeError: Cannot destructure property 'user_first_name' of 'user' as it is undefined.
+ ❯ UserProfileCard src/components/UserProfileCard/UserProfileCard.jsx:8:5
+      6| const UserProfileCard = ({ user, onAvatarSelect, onBackgroundSelect }) => {
+      7|   const {
+      8|     user_first_name,
+       |     ^
+      9|     user_last_name,
+     10|     user_description,
+ ❯ renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:16305:18
+ ❯ mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20074:13
+ ❯ beginWork node_modules/react-dom/cjs/react-dom.development.js:21587:16
+ ❯ beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:27426:14
+ ❯ performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:26560:12
+ ❯ workLoopSync node_modules/react-dom/cjs/react-dom.development.js:26466:5
+ ❯ renderRootSync node_modules/react-dom/cjs/react-dom.development.js:26434:7
+ ❯ recoverFromConcurrentError node_modules/react-dom/cjs/react-dom.development.js:25850:20
+ ❯ performConcurrentWorkOnRoot node_modules/react-dom/cjs/react-dom.development.js:25750:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  __test__/views/ProfileView.test.jsx > render profile view
+Error: could not find react-redux context value; please ensure the component is wrapped in a <Provider>
+ ❯ useReduxContext2 ../../2024-2025%20sem%201/talk-with-stranger-frontend/node_modules/react-redux/dist/react-redux.mjs:47:13
+ ❯ Module.useSelector2 ../../2024-2025%20sem%201/talk-with-stranger-frontend/node_modules/react-redux/dist/react-redux.mjs:85:9
+ ❯ ProfileView src/views/ProfileView.jsx/ProfileView.jsx:22:38
+     20|   const [backgroundModalOpen, setBackgroundModalOpen] = useState(false);
+     21|   const [backgroundSrc, setBackgroundSrc] = useState(null);
+     22|   const { currentUser, isLoading } = useSelector((state) => state.user);
+       |                                      ^
+     23|   const dispatch = useDispatch();
+     24|   console.log(currentUser);
+ ❯ renderWithHooks node_modules/react-dom/cjs/react-dom.development.js:16305:18
+ ❯ mountIndeterminateComponent node_modules/react-dom/cjs/react-dom.development.js:20074:13
+ ❯ beginWork node_modules/react-dom/cjs/react-dom.development.js:21587:16
+ ❯ beginWork$1 node_modules/react-dom/cjs/react-dom.development.js:27426:14
+ ❯ performUnitOfWork node_modules/react-dom/cjs/react-dom.development.js:26560:12
+ ❯ workLoopSync node_modules/react-dom/cjs/react-dom.development.js:26466:5
+ ❯ renderRootSync node_modules/react-dom/cjs/react-dom.development.js:26434:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+ Test Files  2 failed (2)
+      Tests  2 failed (2)
+   Start at  00:29:16
+   Duration  7.46s (transform 204ms, setup 407ms, collect 12.51s, tests 52ms, environment 826ms, prepare 168ms)
+
+
+ FAIL  Tests failed. Watching for file changes...
+       press h to show help, press q to quit
